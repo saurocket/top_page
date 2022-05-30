@@ -1,0 +1,50 @@
+.wrapper{
+    width: 100%;
+}
+.title {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-items: left;
+    gap: 20px;
+}
+
+.hhTitle {
+    display: grid;
+    grid-template-columns:auto 1fr;
+    align-items: center;
+    justify-items: left;
+    gap: 20px;
+}
+.seoText{
+
+}
+.seoText h2 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    margin-top: 50px;
+}
+
+.seoText h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    margin: 0;
+}
+
+
+
+.skillsHeader {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px){
+    .title {
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: 10px;
+    }
+}

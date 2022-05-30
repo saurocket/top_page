@@ -1,0 +1,27 @@
+.footer {
+   background-color: var(--primary);
+   color: var(--white);
+   font-size: 16px;
+   line-height: 1.375;
+   padding: 25px 30px;
+}
+
+.ul {
+   display: grid;
+   grid-template-columns: 1fr auto auto;
+   gap: 10px 40px;
+   margin: 0;
+}
+.ul li:hover a {
+   color: var(--green-light);
+}
+
+@media (max-width: 765px) {
+   .ul{
+      grid-template-columns: 1fr;
+      text-align: center;
+   }
+   .assets{
+      text-align: center;
+   }
+}

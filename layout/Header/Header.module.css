@@ -1,0 +1,28 @@
+.header {
+    padding: 17px;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    gap: 10px;
+}
+.mobileSideBar{
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    background-color: #E5E5E5;
+    padding: 20px 10px;
+}
+.button {
+    z-index: 20;
+    position: fixed;
+    right: 10px;
+    top: 20px
+}
+@media screen and (min-width: 764px) {
+    .header {
+        display: none;
+    }
+}

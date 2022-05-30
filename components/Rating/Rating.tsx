@@ -19,6 +19,29 @@ const Rating = forwardRef(({
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
     const arrayRatingRef = useRef<(HTMLSpanElement | null)[]>([]);
 
+    const constructRating = (currentRating: number) => {
+        const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
+            return (<span
+                className={cn(styles.star, {
+                    [styles.filled]: i < currentRating,
+                    [styles.editable]: isEditable,
+                })}
+                onMouseEnter={() => changeDisplay(i + 1)}
+                onMouseLeave={() => changeDisplay(rating)}
+                onClick={handleClick}
+                tabIndex={computeFocus(rating, i)}
+                onKeyDown={handleKey}
+                ref={r => arrayRatingRef.current?.push(r)}
+            >
+                <StarIcon
+
+                />
+            </span>);
+        });
+        setRatingArray(updatedArray);
+    };
+
+
     useEffect(() => {
         constructRating(rating);
     }, [rating, tabIndex]);
@@ -36,33 +59,11 @@ const Rating = forwardRef(({
         return -1;
     };
 
-    const constructRating = (currentRating: number) => {
-        const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
-            return (<span
-                className={cn(styles.star, {
-                    [styles.filled]: i < currentRating,
-                    [styles.editable]: isEditable,
-                })}
-                onMouseEnter={() => changeDisplay(i + 1)}
-                onMouseLeave={() => changeDisplay(rating)}
-                onClick={() => handleClick(i + 1)}
-                tabIndex={computeFocus(rating, i)}
-                onKeyDown={handleKey}
-                ref={r => arrayRatingRef.current?.push(r)}
-            >
-                <StarIcon
-
-                />
-            </span>);
-        });
-        setRatingArray(updatedArray);
-    };
-
     const changeDisplay = (i: number) => {
         if (!isEditable) return;
         constructRating(i);
     };
-    const handleClick = (i: number) => {
+    const handleClick = () => {
         if (!isEditable || !setRating) return;
 
 

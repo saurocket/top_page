@@ -1,4 +1,4 @@
-import React, {ChangeEvent,useState} from 'react';
+import React, {ChangeEvent,useState, KeyboardEvent} from 'react';
 import SearchIcon from './search.svg';
 import styles from './SearchCourse.module.css';
 import Input from "../Input/Input";
@@ -23,7 +23,7 @@ const SearchCourse:React.FC = ({className, ...props}:SearchProps) => {
         });
 
     };
-    const handleKeyDown = (e:any) => {
+    const handleKeyDown = (e:KeyboardEvent) => {
         if (e.key === 'Enter') {
             goToSearch(e);
         }

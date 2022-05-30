@@ -136,7 +136,7 @@ const Menu: React.FC = (): JSX.Element => {
 
 
     return (
-        <div className={styles.menu}>
+        <div>
             {buildFirstLevel()}
         </div>
     );

@@ -1,7 +1,7 @@
 import React, {useEffect, useState, KeyboardEvent, forwardRef, ForwardedRef, useRef} from 'react';
 import {RatingProps} from './Rating.props';
 import {JSX} from "@babel/types";
-import StarIcon from './Star.svg'
+import StarIcon from './Star.svg';
 import cn from 'classnames';
 import styles from './Rating.module.css';
 
@@ -13,12 +13,11 @@ const Rating = forwardRef(({
                                error,
                                setRating,
                                tabIndex,
-                               children,
                                ...props
                            }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
 
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
-    const arrayRatingRef = useRef<(HTMLSpanElement | null)[]>([])
+    const arrayRatingRef = useRef<(HTMLSpanElement | null)[]>([]);
 
     useEffect(() => {
         constructRating(rating);
@@ -26,15 +25,15 @@ const Rating = forwardRef(({
 
     const computeFocus = (r: number, i: number):number => {
         if(!isEditable) {
-            return -1
+            return -1;
         }
         if (!rating && i === 0) {
             return tabIndex ?? 0;
         }
         if (r === i + 1){
-            return tabIndex ?? 0
+            return tabIndex ?? 0;
         }
-        return -1
+        return -1;
     };
 
     const constructRating = (currentRating: number) => {
@@ -56,33 +55,33 @@ const Rating = forwardRef(({
                 />
             </span>);
         });
-        setRatingArray(updatedArray)
+        setRatingArray(updatedArray);
     };
 
     const changeDisplay = (i: number) => {
         if (!isEditable) return;
         constructRating(i);
-    }
+    };
     const handleClick = (i: number) => {
         if (!isEditable || !setRating) return;
 
 
-    }
+    };
     const handleKey = (e: KeyboardEvent) => {
 
         if (e.code === 'ArrowRight' || e.code === 'ArrowUp') {
             e.preventDefault();
             if (!rating) {
-                setRating(1)
+                setRating(1);
             }else {
                 setRating(rating < 5 ? rating + 1: 5);
-                arrayRatingRef.current[rating]?.focus()
+                arrayRatingRef.current[rating]?.focus();
             }
         }
         if (e.code === 'ArrowLeft' || e.code === 'ArrowDown') {
             e.preventDefault();
-            setRating (rating > 1 ? rating -1 : 1)
-            arrayRatingRef.current[rating-2]?.focus()
+            setRating (rating > 1 ? rating -1 : 1);
+            arrayRatingRef.current[rating-2]?.focus();
         }
 
 
@@ -90,7 +89,7 @@ const Rating = forwardRef(({
 
 
         // setRating(i)
-    }
+    };
 
     return (
         <div {...props} ref={ref} className={styles.wrapper}>

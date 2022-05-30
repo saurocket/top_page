@@ -13,29 +13,29 @@ import Divider from "../Divider/Divider";
 import Image from 'next/image';
 import Review from '../Reviw/Review';
 import ReviewForm from '../ReviewForm/ReviewForm';
-import {motion} from 'framer-motion'
+import {motion} from 'framer-motion';
 
 
 
 
 const Product = motion(forwardRef(({product, className, ...props}:ProductProps, ref:ForwardedRef<HTMLLIElement>): JSX.Element => {
 
-    const reviewRef = useRef<HTMLDivElement>(null)
+    const reviewRef = useRef<HTMLDivElement>(null);
     const [open, setOpen] = useState<boolean>(false);
-    const src = process.env.NEXT_PUBLIC_DOMAIN + product.image
+    const src = process.env.NEXT_PUBLIC_DOMAIN + product.image;
     const variants = {
         visible: {opacity: 1, height: 'auto'},
         hidden: { opacity: 0, height: 0}
-    }
+    };
 
     const handleScrollToElement = () => {
         setOpen(true);
          reviewRef?.current?.scrollIntoView({
           behavior: 'smooth',
           block: 'start'
-        })
-        reviewRef && reviewRef.current.focus()
-    }
+        });
+        reviewRef && reviewRef.current.focus();
+    };
     return (
         <li className={cn(className)} ref={ref}>
             <Card color="white" className={styles.product}>

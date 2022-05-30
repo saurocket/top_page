@@ -2,14 +2,16 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+
 	color: var(--black);
 	background-color: #E5E5E5;
 
-	font-family: 'Noto Sans', sans-serif;
+	font-family: "Noto Sans", sans-serif;
 }
 
 a {
 	text-decoration: none;
+
 	color: inherit;
 }
 
@@ -25,9 +27,10 @@ ul {
 	margin: 0;
 	padding: 0;
 }
-p{
+
+p {
 	margin: 0;
-	padding:0;
+	padding: 0;
 }
 
 :root {
@@ -35,13 +38,13 @@ p{
 	--white: white;
 	--gray: #C4C4C4;
 	--gray-light: #EBEBEB;
-	--gray-dark: #62666c;
-	--primary: #6849df;
-	--primary-hover: #542fd5;
+	--gray-dark: #62666C;
+	--primary: #6849DF;
+	--primary-hover: #542FD5;
 	--red: #FC836D;
 	--dark-red: #DE0000;
-	--green: #0c6d45;
+	--green: #0C6D45;
 	--green-light: #C8F8E4;
-	--font-family: 'Noto Sans', sans-serif;
-	--inputPlaceholder: #A4A4A4
+	--font-family: "Noto Sans", sans-serif;
+	--input-placeholder: #A4A4A4;
 }

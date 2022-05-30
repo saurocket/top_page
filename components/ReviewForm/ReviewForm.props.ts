@@ -1,4 +1,4 @@
-import {DetailedHTMLProps, HTMLAttributes, ReactNode} from "react";
+import {DetailedHTMLProps, HTMLAttributes} from "react";
 
 export interface ReviewFormProps extends DetailedHTMLProps<HTMLAttributes<HTMLFormElement>,HTMLFormElement>{
   productid: string

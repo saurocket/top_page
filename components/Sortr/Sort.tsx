@@ -1,25 +1,25 @@
 import React, {KeyboardEvent, useRef} from 'react';
 import {SortEnum, SortProps} from './Sort.props';
 import {JSX} from "@babel/types";
-import SortIcon from './sort.svg'
+import SortIcon from './sort.svg';
 import cn from 'classnames';
 import styles from './Sort.module.css';
 
 const Sort: React.FC<SortProps> = ({sort, setSort, isProducts, className, ...props}): JSX.Element => {
 
-    const priceRef = useRef<HTMLButtonElement>(null)
-    const ratingRef = useRef<HTMLButtonElement>(null)
+    const priceRef = useRef<HTMLButtonElement>(null);
+    const ratingRef = useRef<HTMLButtonElement>(null);
 
 
     const onKeyDownChange = (e: KeyboardEvent, type: SortEnum) => {
         if (e.code === 'Enter' || e.code === 'Space') {
-            setSort(type)
+            setSort(type);
         }
         if (e.code === 'ArrowUp' || e.code === 'ArrowDown' || e.code === 'ArrowRight' || e.code === 'ArrowLeft') {
-            e.preventDefault()
-            type === SortEnum.Price ? ratingRef.current.focus() : priceRef.current.focus()
+            e.preventDefault();
+            type === SortEnum.Price ? ratingRef.current.focus() : priceRef.current.focus();
         }
-    }
+    };
 
 
     return (

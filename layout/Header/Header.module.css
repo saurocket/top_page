@@ -1,28 +1,35 @@
 .header {
-    padding: 17px;
-    display: grid;
-    grid-template-columns: 1fr 40px;
-    gap: 10px;
+	display: grid;
+
+	padding: 17px;
+	grid-template-columns: 1fr 40px;
+	gap: 10px;
 }
-.mobileSideBar{
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-y: scroll;
-    background-color: #E5E5E5;
-    padding: 20px 10px;
+
+.mobileSideBar {
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	overflow-y: scroll;
+
+	padding: 20px 10px;
+
+	background-color: #E5E5E5;
 }
+
 .button {
-    z-index: 20;
-    position: fixed;
-    right: 10px;
-    top: 20px
+	position: fixed;
+	z-index: 20;
+	top: 20px;
+	right: 10px;
 }
+
 @media screen and (min-width: 764px) {
-    .header {
-        display: none;
-    }
+	.header {
+		display: none;
+	}
 }

@@ -3,10 +3,10 @@ import { ReviewProps } from './Review.props';
 import {JSX} from "@babel/types";
 import cn from 'classnames';
 import styles from './Review.module.css';
-import UserIcon from './user.svg'
+import UserIcon from './user.svg';
 import Htag from "../Htag/Htag";
-import {format} from 'date-fns'
-import {ru} from 'date-fns/locale'
+import {format} from 'date-fns';
+import {ru} from 'date-fns/locale';
 import Rating from "../Rating/Rating";
 
 const Review:React.FC<ReviewProps> = ({review,className, ...props}):JSX.Element => {

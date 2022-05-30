@@ -1,36 +1,42 @@
-.sort{
- display: inline-block;
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 40px;
-    font-size: 16px;
+.sort {
+	display: inline-block;
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 40px;
 
-}
-.sortWrapper{
-    display: grid;
-    grid-template-columns: 20px 1fr;
-    align-items: center;
-    gap:20px;
-    cursor: pointer;
-    border: none;
-    background-color: inherit;
+	font-size: 16px;
 }
 
-.sortWrapper:not(.active){
-    grid-template-columns:1fr;
+.sortWrapper {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+
+	align-items: center;
+	gap: 20px;
+
+	cursor: pointer;
+
+	border: none;
+	background-color: inherit;
 }
 
-.sortIcon{
- display: none;
- fill: var(--primary);
+.sortWrapper:not(.active) {
+	grid-template-columns: 1fr;
 }
 
-.active .sortIcon{
-    display: block;
-    margin-right: 8px;
+.sortIcon {
+	display: none;
+	fill: var(--primary);
 }
 
-.active{
- font-weight: bold;
-    color: var(--primary)
+.active .sortIcon {
+	display: block;
+
+	margin-right: 8px;
+}
+
+.active {
+	color: var(--primary);
+
+	font-weight: bold;
 }

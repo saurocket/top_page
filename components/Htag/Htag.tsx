@@ -1,7 +1,7 @@
 import React from 'react';
 import {HtagProps} from "./Htag.props";
-import styles from './Htag.module.css'
-import cn from 'classnames'
+import styles from './Htag.module.css';
+import cn from 'classnames';
 
 const Htag: React.FC<HtagProps> = ({tag,className, children}): JSX.Element => {
     switch (tag) {
@@ -16,7 +16,7 @@ const Htag: React.FC<HtagProps> = ({tag,className, children}): JSX.Element => {
         case "h5":
             return  <h5 className={cn(className, styles.h4)} >{children}</h5>;
         default:
-            return <></>
+            return <></>;
 
     }
 };

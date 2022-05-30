@@ -3,7 +3,7 @@ import {ButtonProps} from "./Button.props";
 import styles from './Button.module.css';
 import ArrowIcon from './arrow.svg';
 import cn from 'classnames';
-import {motion, useMotionValue} from 'framer-motion'
+import {motion, useMotionValue} from 'framer-motion';
 
 const Button:React.FC<ButtonProps> = ({appearance,
                                           arrow= 'none',

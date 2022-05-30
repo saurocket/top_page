@@ -3,7 +3,7 @@ import {HhDataProps} from './HhData.props';
 import {JSX} from "@babel/types";
 import styles from './HhData.module.css';
 import Card from "../Card/Card";
-import StarIcon from './star.svg'
+import StarIcon from './star.svg';
 import {priseRu} from '../../helpers/helpers';
 
 const HhData: React.FC<HhDataProps> = ({

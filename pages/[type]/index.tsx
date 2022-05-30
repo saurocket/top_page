@@ -16,14 +16,14 @@ function Type({firstCategory}:TypeProps):JSX.Element {
     );
 }
 
-export default withLayout(Type)
+export default withLayout(Type);
 
 export const getStaticPaths: GetStaticPaths = async () => {
     return {
         paths: firstLevelMenu.map(m => `/${m.route}`),
         fallback: true
-    }
-}
+    };
+};
 
 
 
@@ -31,14 +31,14 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}:GetStat
     if (!params) {
         return {
             notFound: true
-        }
+        };
     }
     const firstCategoryItem = firstLevelMenu.find(m => m.route === params.type);
 
     if (!firstCategoryItem) {
         return {
             notFound: true
-        }
+        };
     }
     const {data: menu} = await axios.post<MenuItem[]>(API.topPage.find,{
         firstCategory: firstCategoryItem.id
@@ -49,8 +49,8 @@ export const getStaticProps: GetStaticProps<TypeProps> = async ({params}:GetStat
             menu,
             firstCategory: firstCategoryItem.id
         }
-    }
-}
+    };
+};
 
 interface TypeProps extends Record<string, unknown>{
     menu: MenuItem[]

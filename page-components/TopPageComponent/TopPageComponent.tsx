@@ -39,7 +39,7 @@ const TopPageComponent:React.FC<TopPageComponentProps> = ({firstCategory,page,pr
             </div>
             {firstCategory === TopLevelCategory.Courses && page.hh && <HhData {...page.hh}/>}
             {page.advantages && page.advantages.length && <Advantages advantageList={page.advantages}/>}
-            {page.seoText && <div className={styles.seoText} dangerouslySetInnerHTML={{__html:page.seoText}}/>}
+            {page.seoText && <div dangerouslySetInnerHTML={{__html:page.seoText}}/>}
             <Htag tag="h2" >Получаемые навыки</Htag>
             {page.tags.map(t => <Tag key={t} size="s" color="primary">{t}</Tag>)}
         </div>

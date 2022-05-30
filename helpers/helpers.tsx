@@ -14,11 +14,16 @@ export const firstLevelMenu: IFirstLevelMenuItem[] = [
     {route: 'products', name: 'Товары', icon: <ProductIcon/>, id: TopLevelCategory.Products}
 ];
 
-export const priseRu = (prise:number): string => {
-    return prise
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
-        .concat(' ₴');
+export const priseRu = (prise:number | undefined): string => {
+
+    if (typeof prise === 'undefined') {
+        return '0'
+    } else {
+        return prise
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
+            .concat(' ₴');
+    }
 }
 export const declOfNum = (count: number, titles: [string, string, string]):string => {
     const cases = [2, 0, 1, 1, 1, 2 ]

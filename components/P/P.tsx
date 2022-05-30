@@ -6,7 +6,7 @@ import styles from './p.module.css';
 
 const P:React.FC<PProps> = ({size='s',children,className, ...props}):JSX.Element => {
     return (
-        <p className={cn(styles.p, {
+        <p className={cn(className, styles.p, {
             [styles.s]: size === 's',
             [styles.m]: size === 'm',
             [styles.l]: size === 'l'

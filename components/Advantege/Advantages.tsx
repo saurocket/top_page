@@ -5,7 +5,7 @@ import {JSX} from "@babel/types";
 import styles from './Advantages.module.css';
 import {TopPageAdvantage} from "../../interfaces/page.intarface";
 import Htag from "../Htag/Htag";
-import CheckedIcon from './checked.svg'
+import CheckedIcon from './checked.svg';
 import P from "../P/P";
 
 const Advantages: React.FC<AdvantagesProps> = ({advantageList}): JSX.Element => {
@@ -15,8 +15,8 @@ const Advantages: React.FC<AdvantagesProps> = ({advantageList}): JSX.Element => 
             <Htag tag="h3">{title}</Htag>
             <hr className={styles.line}/>
             <P size="l">{description}</P>
-        </li>
-    }
+        </li>;
+    };
 
     return (<div className={styles.advantages}>
         <Htag tag="h2">Преимущества</Htag>

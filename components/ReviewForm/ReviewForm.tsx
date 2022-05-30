@@ -9,7 +9,7 @@ import Rating from "../Rating/Rating";
 import Button from "../Button/Button";
 import Htag from "../Htag/Htag";
 import P from '../P/P';
-import CloseIcon from './close.svg'
+import CloseIcon from './close.svg';
 import {useForm, Controller} from "react-hook-form";
 import {IReviewForm, IReviewSendResponse} from "./ReviewForm.interface";
 import axios from "axios";
@@ -18,9 +18,9 @@ import { API } from '../../helpers/API';
 
 const ReviewForm: React.FC<ReviewFormProps> = ({productid, isOpened,className, ...props}): JSX.Element => {
 
-    const {register, control, handleSubmit,reset, formState: {errors}} = useForm<IReviewForm>()
+    const {register, control, handleSubmit,reset, formState: {errors}} = useForm<IReviewForm>();
     const [success, setSuccess] = useState<string>('');
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string>('');
 
     const onSubmit = async (formData: IReviewForm) => {
@@ -34,7 +34,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({productid, isOpened,className, .
             if (data.message) {
                 setLoading(false);
                 setSuccess(data.message);
-                reset()
+                reset();
             } else {
                 setError('что-то пошло не так');
                 setLoading(false);
@@ -43,7 +43,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({productid, isOpened,className, .
             setError(e.message);
             setLoading(false);
         }
-    }
+    };
 
     return (
         <form

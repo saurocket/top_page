@@ -1,50 +1,52 @@
-.wrapper{
-    width: 100%;
+.wrapper {
+	width: 100%;
 }
+
 .title {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    justify-items: left;
-    gap: 20px;
+	display: grid;
+	grid-template-columns: 1fr auto;
+
+	align-items: center;
+	justify-items: left;
+	gap: 20px;
 }
 
 .hhTitle {
-    display: grid;
-    grid-template-columns:auto 1fr;
-    align-items: center;
-    justify-items: left;
-    gap: 20px;
-}
-.seoText{
+	display: grid;
+	grid-template-columns: auto 1fr;
 
+	align-items: center;
+	justify-items: left;
+	gap: 20px;
 }
+
 .seoText h2 {
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 30px;
-    margin-top: 50px;
+	margin-top: 50px;
+
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 30px;
 }
 
 .seoText h3 {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 27px;
-    margin: 0;
+	margin: 0;
+
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 27px;
 }
-
-
 
 .skillsHeader {
-    margin-top: 30px;
-    margin-bottom: 20px;
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
-@media screen and (max-width: 600px){
-    .title {
-        grid-template-columns: 1fr;
-        align-items: center;
-        justify-items: center;
-        gap: 10px;
-    }
+@media screen and (max-width: 600px) {
+	.title {
+		grid-template-columns: 1fr;
+
+		align-items: center;
+		justify-items: center;
+		gap: 10px;
+	}
 }

@@ -1,9 +1,9 @@
 FROM node:14-alpine
-WORKDIR D:/NextJS/opt
+WORKDIR /d/NextJs/docker
 ADD package.json package.json
 RUN npm install
 ADD . .
-ENV NODE_ENV roduction
+ENV NODE_ENV production
 RUN npm run build
 RUN npm prune --production
 CMD ["npm", "start"]
